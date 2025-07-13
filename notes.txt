@@ -1,0 +1,3 @@
+ansible => to run ad-hoc module
+ansible-doc => to     get doc of a module or role or collections
+ansible-play => to run a playbook
