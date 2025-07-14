@@ -6,3 +6,12 @@
     file:
       path: ~/file1.txt
       state: touch
+
+- name: add my name to the file
+  hosts: ubuntu_servers
+  tasks:
+   - name: add my name to the file which already exist
+     ansible.builtin.lineinfile:
+      path: ~/file0.txt
+      line: "Mohamed Hussein"
+      create: yes
