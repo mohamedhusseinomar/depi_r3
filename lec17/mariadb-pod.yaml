@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mariadb-server
+  namespace: database-server
+  labels:
+    app: mariadb
+spec:
+  containers:
+  - name: mariadb
+    image: mariadb:10.5
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: "1234"
+    ports:
+    - containerPort: 3306
