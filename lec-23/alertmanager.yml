@@ -1,0 +1,19 @@
+global:
+  resolve_timeout: 5m
+  smtp_smarthost: smtp.gmail.com:587
+  smtp_from: alertmanager@mydomain.com
+  smtp_auth_username: tigermtc49@gmail.com
+  smtp_auth_password: nybp izov vdvv hykm
+  # Make sure this is an App Password, not your main Google password
+
+route:
+  receiver: 'default-receiver'   
+  group_wait: 10s
+  group_interval: 10m
+  repeat_interval: 1h
+
+receivers:
+  - name: 'default-receiver'
+    email_configs:
+      - to: 'tigermtc49@gmail.com'
+        send_resolved: true

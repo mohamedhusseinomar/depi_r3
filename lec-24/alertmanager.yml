@@ -1,0 +1,15 @@
+global:
+  resolve_timeout: 5m
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'tigermtc49@gmail.com'
+  smtp_auth_username: 'tigermtc49@gmail.com'
+  smtp_auth_password: 'nybp izov vdvv hykm'   # App Password من Gmail
+
+route:
+  receiver: 'email'     # خلي بالك من المسافة
+
+receivers:
+  - name: 'email'
+    email_configs:
+      - to: 'tigermtc49@gmail.com'
+        send_resolved: true

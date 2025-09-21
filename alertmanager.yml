@@ -1,0 +1,29 @@
+global:
+  resolve_timeout: 5m
+  smtp_smarthost: smtp.gmail.com:587
+  smtp_from: alertmanager@mydomain.com
+  smtp_auth_username: tigermtc49@gmail.com
+  smtp_auth_password: Tigermtc49Chipsyman5577
+
+route:
+  receiver: 'default-receiver'   
+  group_wait: 10s
+  group_interval: 10m
+  repeat_interval: 1h
+
+  routes:
+    - match:
+        alertname: TestAlert
+      receiver: 'telegram'
+
+receivers:
+  - name: 'default-receiver'
+    email_configs:
+      - to: 'tigermtc49@gmail.com'
+        send_resolved: true
+
+  - name: 'telegram'
+    telegram_configs:
+      - bot_token: /etc/alertmanager/telegram_token_file
+        chat_id: -4972464456
+        send_resolved: true
